@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results</h1>
+    <ul>
+    {% for issue in issues %}
+        <li>{{ issue }}</li>
+    {% endfor %}
+    </ul>
+    <a href="/">Back to Scanner</a>
+</body>
+</html>
