@@ -110,11 +110,11 @@ def scanner():
 
         try:
             all_issues = loop.run_until_complete(perform_scan(url))
-            return render_template('./results.html', issues=all_issues, url=url)
+            return render_template('results.html', issues=all_issues, url=url)
         except Exception as e:
             logging.error(f"Error performing scan: {str(e)}")
-            return render_template('./results.html', issues=[f"Error: {str(e)}"], url=url)
-    return render_template('./index.html')
+            return render_template('results.html', issues=[f"Error: {str(e)}"], url=url)
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
