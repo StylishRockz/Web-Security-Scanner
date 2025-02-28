@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Security Scanner</title>
+  <title>Web Security Scanner</title>
+  <link rel="stylesheet" type="text/css" href="/static/styles.css">
 </head>
 <body>
-    <h1>Web Security Scanner</h1>
-    <form method="POST">
-        <input type="url" name="url" placeholder="Enter website URL" required>
-        <input type="submit" value="Scan">
+  <div class="container">
+    <div class="header">
+      <h1>Web Security Scanner</h1>
+    </div>
+    <form class="scan-form" method="POST">
+      <input type="url" name="url" placeholder="Enter website URL" required>
+      <button type="submit" value="Scan">Scan</button>
     </form>
+  </div>
 </body>
 </html>
