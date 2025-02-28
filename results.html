@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Scan Results</title>
+  <title>Scan Results</title>
+  <link rel="stylesheet" type="text/css" href="/static/styles.css">
 </head>
 <body>
-    <h1>Scan Results</h1>
-    <ul>
-    {% for issue in issues %}
+  <div class="container">
+    <div class="header">
+      <h1>Scan Results</h1>
+    </div>
+    <div class="results">
+      <ul>
+        {% for issue in issues %}
         <li>{{ issue }}</li>
-    {% endfor %}
-    </ul>
-    <a href="/">Back to Scanner</a>
+        {% endfor %}
+      </ul>
+    </div>
+    <a href="/" class="back-link">Back to Scanner</a>
+  </div>
 </body>
 </html>
