@@ -4,17 +4,9 @@ import aiohttp
 import ssl
 import socket
 from urllib.parse import urlparse
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 import logging
 
 app = Flask(__name__)
-
-limiter = Limiter(
-    key_func=get_remote_address,
-    app=app,
-    default_limits=["5 per minute", "100 per day"]
-)
 
 logging.basicConfig(level=logging.INFO)
 
@@ -110,7 +102,6 @@ async def perform_scan(url):
 loop = asyncio.get_event_loop()
 
 @app.route('/', methods=['GET', 'POST'])
-@limiter.limit("5 per minute")
 def scanner():
     if request.method == 'POST':
         url = request.form['url']
@@ -119,11 +110,11 @@ def scanner():
 
         try:
             all_issues = loop.run_until_complete(perform_scan(url))
-            return render_template('results.html', issues=all_issues, url=url)
+            return render_template('./results.html', issues=all_issues, url=url)
         except Exception as e:
             logging.error(f"Error performing scan: {str(e)}")
-            return render_template('error.html', error=str(e))
-    return render_template('index.html')
+            return render_template('./results.html', issues=[f"Error: {str(e)}"], url=url)
+    return render_template('./index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
