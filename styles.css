@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .scan-form {
+    margin-top: 20px;
+  }
+  
+  .scan-form input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .scan-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .scan-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .results {
+    margin-top: 20px;
+  }
+  
+  .results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .results li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .results li:last-child {
+    border-bottom: none;
+  }
+  
+  .back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
